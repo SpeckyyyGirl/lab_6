@@ -1,5 +1,17 @@
 <!DOCTYPE html>
 <html>
+<head>
+<title>Students Table</title>
+<style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 5px;
+  }
+</style>
+</head>
 <body>
 
 <table>
@@ -10,20 +22,19 @@
   </tr>
   <?php
   $students = array(
-      'Alice' => array('program' => 'BIP', 'age' => 21),
-      'Bob' => array('program' => 'BIS', 'age' => 20),
-      'Raju' => array('program' => 'BIT', 'age' => 22)
+      array('name' => 'Alice', 'program' => 'BIP', 'age' => 21),
+      array('name' => 'Bob', 'program' => 'BIS', 'age' => 20),
+      array('name' => 'Raju', 'program' => 'BIT', 'age' => 22)
   );
 
-  foreach ($students as $name => $student) {
-      echo "<tr>";
-      echo "<td>" . $name . "</td>";
-      echo "<td>" . $student['program'] . "</td>";
-      echo "<td>" . $student['age'] . "</td>";
-      echo "</tr>";
+  foreach ($students as $student) {
+    echo "<tr>";
+    echo "<td>" . $student['name'] . "</td>";
+    echo "<td>" . $student['program'] . "</td>";
+    echo "<td>" . $student['age'] . "</td>";
+    echo "</tr>";
   }
   ?>
 </table>
-
 </body>
 </html>
